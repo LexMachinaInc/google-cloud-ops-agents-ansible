@@ -1,7 +1,7 @@
 ---
 - name: Set Service Name
   set_fact:
-    service_name: "{{ ops_agent_service_name }}{{'.target' if version.split('.')[0] == '1' }}"
+    service_name: "{{ ops_agent_service_name }}{{'.target' if version.split('.')[0] == '1' else ''}}"
   when: agent_type == 'ops-agent'
 
 - name: Set Service Name
